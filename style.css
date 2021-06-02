@@ -48,12 +48,13 @@ body {
 
 .sound-name{
   text-align: left;
-  margin-left: 47px;
+  margin-left: 40px;
 }
 
 .sound-bar-container{
   text-align: center;
-  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .fas {
@@ -68,15 +69,11 @@ body {
 }
 
 .main-button {
-  position: relative;
-  top: -1px;
   margin-right: 20px;
   font-size: 25px;
 }
 
 .sound-bar {
-  position: relative;
-  top: -9px;
   appearance: none;
   width: 60%;
   height: 5px;
