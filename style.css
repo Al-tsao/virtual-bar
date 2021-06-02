@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container{
+  z-index: 2;
+  position: relative;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  min-height: 800px;
+  min-width: 400px;
+}
+
+.container::after{
+  content: "";
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/Virtual_Bar_1.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(0.8) sepia(0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.player-container {
+  z-index: 3;
+  position: absolute;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  height: 600px;
+  width: 400px;
+  min-height: 600px;
+  min-width: 400px;
+  background: rgba(231, 231, 231, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 30px 30px 15px rgba(0, 0, 0, 1);
+}
+
+.spread-even-container {
+  height: 100%;
+  display: flex;
+  flex-direction:column;
+  justify-content: space-evenly;
+}
+.sound-container{
+  width: 90%;
+  margin: 0 auto;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.sound-name{
+  position: relative;
+  text-align: left;
+  left: 52px;
+}
+
+.sound-bar-container{
+  text-align: center;
+}
+
+.fas {
+  font-size: 30px;
+  color: rgba(35, 35, 35, 1);
+  cursor: pointer;
+  user-select: none;
+}
+
+.fas:hover {
+  color: rgba(35, 35, 35, 0.5);
+}
+
+.main-button {
+  position: relative;
+  top: -1px;
+  margin-right: 20px;
+  font-size: 25px;
+}
+
+.sound-bar {
+  position: relative;
+  top: -9px;
+  appearance: none;
+  width: 60%;
+  height: 5px;
+  margin: 0 10px 0 10px;
+  border-radius: 25px;
+  background: linear-gradient(90deg, #242323  50%, #fff 50%);
+}
+
+.sound-bar::-webkit-slider-thumb
+ {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: rgba(35, 35, 35, 1);
+  border-radius: 50%;
+  border: 1.5px solid rgba(231, 231, 231, 0.9);
+  cursor: pointer;
+}
+
+.sound-bar::-moz-range-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: rgba(35, 35, 35, 1);
+  border-radius: 50%;
+  border: 1.5px solid rgba(231, 231, 231, 0.9);
+  cursor: pointer;
+}
