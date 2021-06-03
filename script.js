@@ -68,8 +68,7 @@ let audioJsNames = document.querySelectorAll('#audio');
 let soundBarJsNames = document.querySelectorAll('#sound-bar');
 let volumeUpJsNames = document.querySelectorAll('#volume-up');
 
-
-// event listener-Play sound
+// event listener-play sound
 playJsNames.forEach((item, index) => {
   item.addEventListener('click', () => {
     if (item.classList.contains('fa-play')) {
@@ -77,7 +76,7 @@ playJsNames.forEach((item, index) => {
       item.classList.replace('fa-play', 'fa-pause');
       item.setAttribute('title', 'Pause');
       audioJsNames[index].play();
-      audioJsNames[index].loop();
+      audioJsNames[index].loop = true;
     } else {
       item.classList.replace('fa-pause', 'fa-play');
       item.setAttribute('title', 'Play');
@@ -86,5 +85,36 @@ playJsNames.forEach((item, index) => {
   })
 })
 
+// event listener-sound bar
+soundBarJsNames.forEach((item, index) => {
+  audioJsNames[index].volume = 0.5;
+  item.addEventListener('input', () => {
+    const soundBarValue = item.value;
+    const color = `linear-gradient(90deg, #242323  ${soundBarValue}%, #fff ${soundBarValue}%)`;
+    item.style.background = color;
+    audioJsNames[index].volume = soundBarValue / 100;
+  })
+})
 
+// Sound volume up and down
+volumeUpJsNames.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    soundBarJsNames[index].value++;
+    const soundBarValue = soundBarJsNames[index].value;
+    const color = `linear-gradient(90deg, #242323  ${soundBarValue}%, #fff ${soundBarValue}%)`;
+    soundBarJsNames[index].style.background = color;
+    audioJsNames[index].volume = soundBarValue / 100;
+    console.log(audioJsNames[index].volume)
+  })
+})
 
+volumeDownJsNames.forEach((item, index) => {
+  item.addEventListener('click', () => {
+    soundBarJsNames[index].value--;
+    const soundBarValue = soundBarJsNames[index].value;
+    const color = `linear-gradient(90deg, #242323  ${soundBarValue}%, #fff ${soundBarValue}%)`;
+    soundBarJsNames[index].style.background = color;
+    audioJsNames[index].volume = soundBarValue / 100;
+    console.log(audioJsNames[index].volume)
+  })
+})
