@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -22,12 +24,116 @@ body {
   align-items: center;
 }
 
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  animation: fadeOut 0.5s ease-in-out;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100%{
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.open-container {
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0px;
+}
+
+.open {
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('./img/Virtual_Bar_1.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+.open-shadow {
+  z-index: 3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.neon-text{
+  z-index: 4;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  color: white;
+  font-size: 36px;
+}
+
+.neon-text h1{
+  position: relative;
+  top: 50%;
+  left: 0px;
+  transform: translate(0, -50%);
+  display: block;
+  margin: auto;
+  font-family: 'Monoton', cursive;
+  font-weight: 400;
+  color: red;
+  text-shadow: -1px 0px 5px #e91e63, 0px 0px 2px #e91eb6;
+  animation: neon 4s;
+}
+
+@keyframes neon {
+  0%, 19%, 45%, 48% {
+    color: #222;
+    text-shadow: -1px 0px 5px #222, 0px 0px 2px #222;
+  }
+  20%, 40%, 46%, 49% ,100% {
+  color: red;
+  text-shadow: -1px 0px 5px #e91e63, 0px 0px 2px #e91eb6;
+  }  
+}
+
+.text-up {
+  position: relative;
+  top: -30%;
+  animation: textUp 1s;
+}
+
+@keyframes textUp {
+  0% {
+    opacity: 1;
+    top: 0%;
+  }
+
+  100%{
+    opacity: 0;
+    top: -30%;
+  }
+}
+
 .player-container {
   height: 600px;
   width: 375px;
   background: rgba(231, 231, 231, 0.9);
   border-radius: 20px;
   box-shadow: 0 30px 30px 15px rgba(0, 0, 0, 1);
+  
 }
 
 .spread-even-container {

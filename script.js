@@ -187,3 +187,14 @@ function pauseOrPlayAllSelected() {
   }
 };
 pauseOrPlayAllSelected()
+
+// neon-light
+neonLight = document.getElementById('neon-light');
+neonText = document.getElementById('neon-text');
+
+setTimeout(function () {
+  // neonLight.style.display = 'none';
+  // neonLight.style.visibility = 'hidden';
+  neonLight.classList.add("hidden");
+  neonText.classList.add("text-up");
+}, 3000)
